@@ -1,0 +1,15 @@
+[Unit]
+Description=violet Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=odroid
+WorkingDirectory=/home/odroid/violet
+EnvironmentFile=/home/odroid/violet/.env
+ExecStart=/usr/bin/python3 /home/odroid/violet/main.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
